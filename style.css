@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+.wrapper{
+    margin: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color:aliceblue;
+    
+}
+.board-item{
+    background-color: azure;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: all 0.05s linear;
+    cursor: pointer;
+    position: relative;
+    
+
+}
+.board-item:hover{
+    background-color: #999;
+}
+.board-item--filled-X::before{
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: black;
+
+}
+.board-item--filled-X::after{
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(45deg);
+    background-color: black;
+
+}
+
+.board-item--filled-O::before{
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    border: 5px solid black;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+.reset{
+    margin: 20px;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.05s linear;
+}
+.reset:hover{
+    background-color:#ddd ;
+}
+.panel{
+    font-size: 30px;
+    margin: 5px;
+}
